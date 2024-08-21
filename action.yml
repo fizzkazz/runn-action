@@ -61,10 +61,6 @@ runs:
     - name: 'Check input parameter'
       shell: 'bash'
       run: |
-        if [[ "${{ inputs.version }}" < "v0.64.0" ]]; then
-          echo "Error: runn version ${{ inputs.version }} is not supported. Please use v0.64.0 or higher."
-          exit 1
-        fi
         if [[ ! "${{ inputs.command }}" =~ ^(run|list|loadt)$ ]]; then
           echo "Error: Invalid command ${{ inputs.command }} is not supported. Please specify run or list or loadt."
           exit 1
